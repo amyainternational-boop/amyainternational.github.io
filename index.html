@@ -1,72 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMYA | Home</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(180deg,#061323 0%,#0D2A45 70%,#0F3D5F 100%);
+    color: #E6F1FF;
+    line-height: 1.65;
+}
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Contact</a>
-</nav>
+a {
+    text-decoration: none;
+    color: #D4AF37;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    position: relative;
+}
 
-<!-- Hero Section -->
-<section class="text-center">
-    <h1>AMYA</h1>
-    <div class="divider"></div>
-    <p style="font-size:18px; opacity:0.9;">Where Trust Becomes Action</p>
-</section>
+a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.4s ease;
+}
 
-<!-- About Summary -->
-<section class="container">
-    <p>AMYA operates at the intersection of <strong>ethics, strategy, governance, and design</strong>. Inspired by the principle of <span class="highlight">Amanah</span> — trust, responsibility, and stewardship — it exists to support leaders and organisations in navigating complexity with clarity, structure, and principled discipline.</p>
+a:hover::after {
+    width: 100%;
+}
 
-    <p style="margin-top:25px;">Meaningful impact requires both intention and infrastructure. <strong>Ethics without systems collapse.</strong> <strong>Vision without governance fragments.</strong> <strong>Passion without clarity burns out.</strong></p>
+a:hover {
+    color: #FFD700;
+}
 
-    <div class="grid-2">
-        <div>
-            <h3>Advisory</h3>
-            <p>AMYA builds sustainable frameworks across operations, compliance, governance alignment, policy refinement, and strategic positioning.</p>
-        </div>
-        <div>
-            <h3>Intentional Convening</h3>
-            <p>Beyond consultancy, AMYA curates structured gatherings — forums, roundtables, leadership sessions — designed with depth and commercial viability.</p>
-        </div>
-    </div>
+/* Navigation */
+nav {
+    background: rgba(11,44,72,0.95);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 2px solid #D4AF37;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <h3 class="text-center" style="letter-spacing:3px; margin-bottom:40px;">Structural Foundation</h3>
-    <div class="grid-4">
-        <div class="card">
-            <strong>Architecture</strong>
-            <p style="font-size:14px; opacity:0.8; margin-top:10px;">Layered systems built to endure.</p>
-        </div>
-        <div class="card">
-            <strong>International Law</strong>
-            <p style="font-size:14px; opacity:0.8; margin-top:10px;">Governance with accountability and clarity.</p>
-        </div>
-        <div class="card">
-            <strong>Operations</strong>
-            <p style="font-size:14px; opacity:0.8; margin-top:10px;">Strategy that is executable.</p>
-        </div>
-        <div class="card">
-            <strong>Design</strong>
-            <p style="font-size:14px; opacity:0.8; margin-top:10px;">Clarity made visible.</p>
-        </div>
-    </div>
+/* Headings */
+h1 { color: #D4AF37; text-align:center; letter-spacing:3px; }
+h2, h3 { color: #FFD700; }
 
-    <div class="text-center" style="max-width:750px; margin:0 auto;">
-        <div class="divider" style="width:100px;"></div>
-        <p style="font-size:20px; line-height:1.9;">AMYA translates values into systems, intention into structure, and trust into disciplined action.</p>
-        <p style="margin-top:20px; font-size:17px; opacity:0.85;">Built for leaders who care not only about outcomes — but about how those outcomes are achieved.</p>
-    </div>
-</section>
+/* Divider */
+.divider { width:80px; height:3px; background:#D4AF37; margin:20px auto 40px auto; border-radius:2px; }
 
-<footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
-</body>
-</html>
+/* Containers */
+.container { max-width:1100px; margin:auto; padding:100px 20px 60px 20px; }
+section { padding:60px 20px; }
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.05); /* very dark glassy */
+    padding:30px 25px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(212,175,55,0.25);
+    margin-top:40px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Grids */
+.grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:60px; margin-bottom:80px; }
+.grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; text-align:center; margin-bottom:80px; }
+.grid-4 .card { margin-top:0; }
+
+/* Highlight */
+.highlight { color:#FFD700; font-weight:600; }
+
+/* Footer */
+footer { text-align:center; padding:50px 20px; font-size:0.9rem; color:#A8C0D8; border-top:1px solid rgba(212,175,55,0.25); margin-top:80px; }
+
+/* Text Center */
+.text-center { text-align:center; }
+
+/* Buttons */
+.btn {
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:30px;
+    background: linear-gradient(45deg, #D4AF37, #FFD700);
+    color:#061323;
+    font-weight:600;
+    letter-spacing:1px;
+    transition: all 0.4s ease;
+}
+.btn:hover { background: linear-gradient(45deg,#FFD700,#D4AF37); transform:scale(1.05); }
+
+/* Responsive */
+@media(max-width:768px){ h1{font-size:2.8rem;} .grid-2{gap:40px;} .grid-4{gap:20px;} nav{gap:25px;padding:12px 15px;} }
+@media(max-width:480px){ h1{font-size:2.3rem;} nav{flex-direction:column;gap:15px;} }
