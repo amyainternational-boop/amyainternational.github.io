@@ -1,49 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMYA | About</title>
-<style>
-    body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg,#071A2D 0%,#0B2C48 60%,#0E3A5F 100%); color:#E6F1FF; }
-    nav a { text-decoration:none; color:#D4AF37; font-weight:bold; }
-    nav a:hover { color:#FFD700; }
-    .container { max-width:900px; margin:auto; padding:80px 20px; }
-    h1 { font-size:3rem; letter-spacing:2px; margin-bottom:10px; color:#D4AF37; text-transform:uppercase; }
-    .highlight { color:#D4AF37; font-weight:500; }
-    .divider { width:80px; height:2px; background-color:#D4AF37; margin:30px 0; }
-    .card { background:rgba(255,255,255,0.03); padding:30px; border-radius:12px; backdrop-filter:blur(8px); border:1px solid rgba(212,175,55,0.2); margin-top:40px; }
-    footer { text-align:center; padding:40px 20px; font-size:0.9rem; color:#A8C0D8; border-top:1px solid rgba(212,175,55,0.2); margin-top:80px; }
-</style>
-</head>
-<body>
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg,#071A2D 0%,#0B2C48 60%,#0E3A5F 100%);
+    color: #E6F1FF;
+    line-height: 1.6;
+}
 
-<nav style="background:#0B2C48; padding:15px; display:flex; justify-content:center; gap:30px; border-bottom: 2px solid #D4AF37;">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
+a {
+    text-decoration: none;
+    color: #D4AF37;
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-<div class="container">
-  <h1>AMYA</h1>
-  <div class="divider"></div>
+a:hover {
+    color: #FFD700;
+}
 
-  <p>AMYA is a contemporary Islamic consultancy delivering strategic advisory across operations, governance, and brand clarity.</p>
+/* Navigation */
+nav {
+    background: #0B2C48;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 2px solid #D4AF37;
+}
 
-  <p>Rooted in the principle of <span class="highlight">Amanah</span> — trust and responsibility — AMYA supports leaders and organisations in building structured, ethical, and sustainable systems. Our work integrates governance frameworks, operational design, and clarity-driven decision-making to ensure integrity and long-term vision.</p>
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+}
 
-  <div class="card">
-    <h2>Our Ethos</h2>
-    <p>We believe excellence (<span class="highlight">Ihsan</span>) is foundational — not optional. Every structure we design and every event we curate is intentional, purposeful, and aligned with long-term impact.</p>
-  </div>
+/* Headings */
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #D4AF37;
+    text-transform: uppercase;
+}
 
-  <div class="card">
-    <h2>Beyond Advisory</h2>
-    <p>Alongside strategic consultancy, AMYA curates high-quality events that cultivate leadership, meaningful dialogue, and authentic community connection.</p>
-  </div>
-</div>
+h2, h3 {
+    color: #D4AF37;
+}
 
-<footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
+/* Divider */
+.divider {
+    width: 80px;
+    height: 2px;
+    background-color: #D4AF37;
+    margin: 30px 0;
+}
 
-</body>
-</html>
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    color: #A8C0D8;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 80px;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+}
+
+/* Highlight */
+.highlight {
+    color: #D4AF37;
+    font-weight: 500;
+}
+
+/* Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.grid-4 .card {
+    margin-top: 0;
+}
