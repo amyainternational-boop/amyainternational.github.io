@@ -1,1 +1,109 @@
 <link rel="stylesheet" href="styles.css">
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg,#071A2D 0%,#0B2C48 60%,#0E3A5F 100%);
+    color: #E6F1FF;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #D4AF37;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FFD700;
+}
+
+/* Navigation */
+nav {
+    background: #0B2C48;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 2px solid #D4AF37;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #D4AF37;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    color: #D4AF37;
+}
+
+/* Divider */
+.divider {
+    width: 80px;
+    height: 2px;
+    background-color: #D4AF37;
+    margin: 30px 0;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    color: #A8C0D8;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 80px;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+}
+
+/* Highlight */
+.highlight {
+    color: #D4AF37;
+    font-weight: 500;
+}
+
+/* Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.grid-4 .card {
+    margin-top: 0;
+}
