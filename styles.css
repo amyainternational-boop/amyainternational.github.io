@@ -1,4 +1,5 @@
 /* ===== GLOBAL ===== */
+
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -6,11 +7,13 @@ body {
   color: #f8fafc;
   -webkit-font-smoothing: antialiased;
 }
+
 section {
   padding: 80px 20px;
 }
 
 /* ===== NAVIGATION ===== */
+
 nav {
   display: flex;
   justify-content: center;
@@ -22,6 +25,7 @@ nav {
   top: 0;
   z-index: 1000;
 }
+
 nav a {
   color: #f8fafc;
   text-decoration: none;
@@ -29,55 +33,37 @@ nav a {
   letter-spacing: 2px;
   transition: 0.3s ease;
 }
+
 nav a:hover {
   color: #cbd5e1;
   transform: translateY(-3px);
 }
 
-/* ===== FLOATING LOGO / BANNER ===== */
-.floating-logo {
-  text-align: center;
-  margin: 60px auto 80px;
+/* ===== BANNER ===== */
+
+.banner {
+  max-width: 1100px;
+  margin: 70px auto;
   padding: 0 20px;
-  max-width: 900px;
 }
 
-.floating-logo img {
-  max-width: 70%;              /* Smaller than full-width for logo feel – adjust % if needed */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.45)); /* Strong float shadow */
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy-smooth */
+.banner img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  transition: transform 0.6s ease;
 }
 
-/* Gentle floating animation (bob up/down) */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-25px); }
+.banner img:hover {
+  transform: scale(1.02);
 }
-
-.floating-logo img {
-  animation: float 7s ease-in-out infinite; /* Slow, calming float */
-}
-
-/* Hover: Lift more, scale gently, add glow/brightness */
-.floating-logo:hover img {
-  transform: translateY(-40px) scale(1.08);
-  filter: drop-shadow(0 35px 60px rgba(0, 0, 0, 0.6)) brightness(1.12);
-}
-
-/* Optional subtle glow ring on hover – uncomment if you want extra magic */
-/*
-.floating-logo:hover img {
-  box-shadow: 0 0 60px rgba(147, 197, 253, 0.5); /* Soft blue glow – change color to match brand */
-}
-*/
 
 /* ===== TITLE SECTION ===== */
+
 .text-center {
   text-align: center;
 }
+
 h1 {
   font-size: 110px;
   letter-spacing: 10px;
@@ -87,6 +73,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
+
 .divider {
   width: 150px;
   height: 3px;
@@ -96,6 +83,7 @@ h1 {
 }
 
 /* ===== CONTENT CONTAINER ===== */
+
 .container {
   max-width: 1100px;
   margin: auto;
@@ -103,12 +91,14 @@ h1 {
 }
 
 /* ===== FLOATY GRID 2 ===== */
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   margin-top: 60px;
 }
+
 .grid-2 div {
   background: rgba(255,255,255,0.06);
   padding: 40px;
@@ -117,17 +107,20 @@ h1 {
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
+
 .grid-2 div:hover {
   transform: translateY(-12px);
   box-shadow: 0 35px 80px rgba(0,0,0,0.5);
 }
 
 /* ===== FLOATY CARDS ===== */
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
+
 .card {
   background: rgba(255,255,255,0.05);
   padding: 35px;
@@ -137,12 +130,14 @@ h1 {
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
+
 .card:hover {
   transform: translateY(-15px) scale(1.03);
   box-shadow: 0 40px 90px rgba(0,0,0,0.6);
 }
 
 /* ===== H3 STYLING ===== */
+
 h3 {
   font-size: 22px;
   letter-spacing: 2px;
@@ -151,6 +146,7 @@ h3 {
 }
 
 /* ===== FOOTER ===== */
+
 footer {
   text-align: center;
   padding: 40px;
