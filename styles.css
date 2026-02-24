@@ -1,156 +1,39 @@
-/* ===== GLOBAL ===== */
+ index <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMYA | About</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #f8fafc;
-  -webkit-font-smoothing: antialiased;
-}
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-section {
-  padding: 80px 20px;
-}
+<section class="container">
+  <h1>AMYA</h1>
+  <div class="divider"></div>
 
-/* ===== NAVIGATION ===== */
+  <p>AMYA is a contemporary Islamic consultancy delivering strategic advisory across operations, governance, and brand clarity.</p>
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 25px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+  <p>Rooted in the principle of <span class="highlight">Amanah</span>, AMYA supports leaders and organisations in building structured, ethical, and sustainable systems.</p>
 
-nav a {
-  color: #f8fafc;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 2px;
-  transition: 0.3s ease;
-}
+  <div class="card">
+    <h2>Our Ethos</h2>
+    <p>We believe excellence (<span class="highlight">Ihsan</span>) is foundational. Every structure we design and every event we curate is intentional, purposeful, and aligned with long-term impact.</p>
+  </div>
 
-nav a:hover {
-  color: #cbd5e1;
-  transform: translateY(-3px);
-}
+  <div class="card">
+    <h2>Beyond Advisory</h2>
+    <p>Alongside strategic consultancy, AMYA curates high-quality events that cultivate leadership, meaningful dialogue, and authentic community connection.</p>
+  </div>
+</section>
 
-/* ===== BANNER ===== */
-
-.banner {
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 0 20px;
-}
-
-.banner img {
-  width: 100%;
-  border-radius: 25px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-  transition: transform 0.6s ease;
-}
-
-.banner img:hover {
-  transform: scale(1.02);
-}
-
-/* ===== TITLE SECTION ===== */
-
-.text-center {
-  text-align: center;
-}
-
-h1 {
-  font-size: 110px;
-  letter-spacing: 10px;
-  margin: 0;
-  background: linear-gradient(90deg, #ffffff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
-
-.divider {
-  width: 150px;
-  height: 3px;
-  margin: 30px auto;
-  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
-  border-radius: 5px;
-}
-
-/* ===== CONTENT CONTAINER ===== */
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  line-height: 1.8;
-}
-
-/* ===== FLOATY GRID 2 ===== */
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.grid-2 div {
-  background: rgba(255,255,255,0.06);
-  padding: 40px;
-  border-radius: 25px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  transition: all 0.4s ease;
-}
-
-.grid-2 div:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.5);
-}
-
-/* ===== FLOATY CARDS ===== */
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 35px;
-  border-radius: 25px;
-  text-align: center;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  transition: all 0.4s ease;
-}
-
-.card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 40px 90px rgba(0,0,0,0.6);
-}
-
-/* ===== H3 STYLING ===== */
-
-h3 {
-  font-size: 22px;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  color: #e2e8f0;
-}
-
-/* ===== FOOTER ===== */
-
-footer {
-  text-align: center;
-  padding: 40px;
-  background: rgba(0,0,0,0.4);
-  font-size: 14px;
-  letter-spacing: 2px;
-}
+<footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
+</body>
+</html>
