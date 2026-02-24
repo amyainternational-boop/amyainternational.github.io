@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMYA | Information</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Your existing CSS file -->
+  <style>
+    /* Quick page-specific overrides/additions – add to styles.css or keep inline */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.65)),
+                  url('https://thumbs.dreamstime.com/b/elegant-islamic-geometric-pattern-background-gold-emerald-green-color-palette-luxury-ramadan-theme-intricate-arabesque-elegant-440099172.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      border-radius: 0 0 24px 24px;
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .highlight {
+      color: #d4af37; /* warm gold accent */
+      font-weight: 600;
+    }
+    .info-section {
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    .focus-item {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .focus-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    .focus-item h3 {
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+    .visual-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      object-fit: cover;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 3rem 0 1.5rem;
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="information.html">Information</a> <!-- or about.html -->
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+  <h1>AMYA</h1>
+  <p>A strategic consultancy working across <span class="highlight">business operations</span>, <span class="highlight">governance</span>, <span class="highlight">policy development</span>, and <span class="highlight">design-led strategy</span>.</p>
+  <p>We help organisations and founders build clear systems, strong governance frameworks, and aligned brand positioning so they operate with integrity and long-term sustainability.</p>
+</section>
+
+<section class="info-section">
+  <p style="font-size: 1.3rem; line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto 4rem; color: #334155;">
+    Alongside advisory work, we curate intentional, premium events — from leadership forums to structured community gatherings — designed to foster meaningful dialogue, connection, and commercially viable impact.
+  </p>
+
+  <h2 class="section-title">Our Focus</h2>
+  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #555;">
+    AMYA works across business strategy, governance, design, and policy development — helping organisations operate with clarity, structure, and integrity.
+  </p>
+
+  <div class="focus-grid">
+    <div class="focus-item">
+      <h3>Business Operations</h3>
+      <p>Structured systems, workflow optimisation, and scalable operations that reduce chaos and enable calm, principle-driven growth.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Governance & Integrity</h3>
+      <p>Robust frameworks, ethical oversight, and accountability structures built on trust (amanah) and justice (adl).</p>
+    </div>
+    <div class="focus-item">
+      <h3>Policy Development</h3>
+      <p>Clear, documented foundations — from founding charters to internal policies — that professionalise and protect long-term missions.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Design-Led Strategy</h3>
+      <p>Intentional brand clarity, visual identity, and experience design that communicates values with elegance and purpose.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">What We Create</h2>
+  <div class="visual-grid">
+    <div class="visual-item">
+      <img src="https://www.richardbollphotography.com/wp18/wp-content/uploads/2024/11/382A4467_Copyright-Richard-Boll.jpg" alt="Professional team in strategic consultation
