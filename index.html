@@ -1,51 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMYA | Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana; background: #0b1d3a; color: #fff; margin:0; }
-    nav { display:flex; justify-content:center; gap:2rem; background:#0f2a5c; padding:1rem; }
-    nav a { color:#fff; text-decoration:none; font-weight:600; }
-    nav a:hover { color:#ffd700; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMYA | Home</title>
+<style>
+  /* Basic Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #fff; background: #061934; }
 
-    .hero-banner { position:relative; width:100%; height:80vh; overflow:hidden; }
-    .banner-img { width:100%; height:100%; object-fit:cover; display:block; }
-    .hero-overlay { position:absolute; inset:0; background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display:flex; align-items:center; justify-content:center; }
-    .hero-content { text-align:center; padding:2rem; }
-    .hero-content h1 { font-size:4rem; margin-bottom:0.5rem; }
-    .hero-content .tagline { font-size:1.5rem; font-weight:500; }
-    .divider { width:80px; height:4px; background:#ffd700; margin:1rem auto; border-radius:2px; }
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #0a294b;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #bfa14a; } /* muted gold */
 
-    h1,h2,h3,h4 { text-align:center; margin-bottom:1rem; }
-    .container { max-width:1200px; margin:3rem auto; padding:0 1rem; }
+  /* Hero Banner */
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-content {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+  }
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-content .tagline {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .divider {
+    width: 80px;
+    height: 4px;
+    background: #bfa14a; /* darker gold */
+    margin: 1rem auto;
+    border-radius: 2px;
+  }
 
-    .highlight { color:#ffd700; font-weight:600; }
+  /* Content Section */
+  .container { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; }
+  h1, h2, h3, h4 { text-align: center; margin-bottom: 1rem; }
+  p { margin-bottom: 1.2rem; }
 
-    .grid-2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; margin:2rem 0; }
-    .service-card, .foundation-card { 
-      background: rgba(255,255,255,0.12); 
-      padding:1.5rem; 
-      border-radius:16px; 
-      text-align:center; 
-      backdrop-filter: blur(8px); 
-      box-shadow:0 10px 30px rgba(0,0,0,0.5); 
-      transition: transform 0.3s, box-shadow 0.3s; 
-    }
-    .service-card:hover, .foundation-card:hover { transform: translateY(-12px); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
+  .highlight { color: #bfa14a; font-weight: 600; }
 
-    .grid-4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.5rem; margin:2rem 0; }
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+  .service-card, .foundation-card {
+    background: rgba(20,40,70,0.3); /* darker glass blue */
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid #2c466b; /* muted border */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: float 6s ease-in-out infinite;
+  }
+  .service-card:hover, .foundation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  }
 
-    .closing-main { font-size:1.2rem; font-weight:500; margin-bottom:0.5rem; }
-    .closing-sub { font-size:1rem; color:#ccc; }
-    .small-divider { width:50px; height:3px; background:#ffd700; margin:1rem auto; border-radius:2px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
 
-    footer { text-align:center; padding:1.5rem; background:#0f2a5c; color:#fff; font-size:0.9rem; margin-top:3rem; }
-  </style>
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* Closing Section */
+  .closing { margin-top: 3rem; }
+  .closing-main { font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .closing-sub { font-size: 1rem; color: #ccc; }
+  .small-divider { width: 50px; height: 3px; background: #bfa14a; margin: 1rem auto; border-radius: 2px; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #0a294b;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content .tagline { font-size: 1.2rem; }
+  }
+</style>
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -53,8 +135,11 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Hero / Floating Banner with overlay -->
   <div class="hero-banner">
-    <img src="assets/1.jpg" alt="AMYA Banner" class="banner-img">
+    <img src="assets/1.jpg" 
+         alt="AMYA Banner" 
+         class="banner-img">
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>AMYA</h1>
@@ -64,6 +149,7 @@
     </div>
   </div>
 
+  <!-- Content Section -->
   <section class="container content-section">
     <p class="intro-text">
       AMYA operates at the intersection of <strong>ethics, strategy, governance, and design</strong>. 
@@ -91,10 +177,22 @@
 
     <h3 class="section-title">Structural Foundation</h3>
     <div class="grid-4 foundation-cards">
-      <div class="foundation-card"><strong>Architecture</strong><p>Layered systems built to endure.</p></div>
-      <div class="foundation-card"><strong>International Law</strong><p>Governance with accountability and clarity.</p></div>
-      <div class="foundation-card"><strong>Operations</strong><p>Strategy that is executable.</p></div>
-      <div class="foundation-card"><strong>Design</strong><p>Clarity made visible.</p></div>
+      <div class="foundation-card">
+        <strong>Architecture</strong>
+        <p>Layered systems built to endure.</p>
+      </div>
+      <div class="foundation-card">
+        <strong>International Law</strong>
+        <p>Governance with accountability and clarity.</p>
+      </div>
+      <div class="foundation-card">
+        <strong>Operations</strong>
+        <p>Strategy that is executable.</p>
+      </div>
+      <div class="foundation-card">
+        <strong>Design</strong>
+        <p>Clarity made visible.</p>
+      </div>
     </div>
 
     <div class="closing">
@@ -109,5 +207,6 @@
   </section>
 
   <footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
+
 </body>
 </html>
