@@ -1,81 +1,160 @@
-.services {
-  margin: 4rem 0;
+about: .services {
+  margin: 5rem 0;                    /* more breathing room top/bottom */
   text-align: center;
+  padding: 0 1rem;                   /* safe side padding on narrow screens */
 }
 
-.section-intro {
-  max-width: 700px;
-  margin: 1.5rem auto 3rem;
-  font-size: 1.2rem;
-  color: #555;
+.section-intro,
+.section-closing {                   /* assuming you added .section-closing from earlier */
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* fluid typography */
+  line-height: 1.75;
+  color: #4b5563;                    /* warmer gray for readability */
 }
 
 .domain-card {
-  background: #f8f9fa;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  margin: 2rem auto;
-  max-width: 900px;
+  background: #ffffff;               /* clean white base for light mode */
+  border: 1px solid #e5e7eb;         /* softer border */
+  border-radius: 16px;               /* slightly larger radius = modern */
+  margin: 2.5rem auto;
+  max-width: 920px;
   overflow: hidden;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* deeper but softer shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;                /* for potential pseudo-elements later */
 }
 
-.domain-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+.domain-card:hover,
+.domain-card:focus-within {          /* better accessibility on focus */
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 .domain-header {
-  background: #0f172a;          /* dark slate for contrast */
+  background: #0f172a;               /* keep deep slate/navy – conveys trust & authority */
   color: white;
-  padding: 1.4rem 2rem;
+  padding: 1.6rem 2.25rem;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .domain-number {
-  font-size: 1.8rem;
-  font-weight: 800;
-  opacity: 0.9;
+  font-size: 2.2rem;
+  font-weight: 900;
+  opacity: 0.92;
+  letter-spacing: -0.05em;           /* subtle modern touch */
 }
 
 .domain-header h3 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 .domain-content {
-  padding: 2rem;
+  padding: 2.25rem;
+  line-height: 1.8;                  /* much better for long paragraphs */
+}
+
+.domain-content p {
+  margin-bottom: 1.5rem;
+  color: #374151;
+  font-size: 1.05rem;
 }
 
 .domain-content ul {
   list-style: none;
   padding-left: 0;
-  margin: 1.4rem 0;
+  margin: 2rem 0;
 }
 
 .domain-content li {
-  margin-bottom: 0.9rem;
-  padding-left: 1.8rem;
+  margin-bottom: 1.1rem;
+  padding-left: 2rem;
   position: relative;
+  color: #1f2937;
 }
 
 .domain-content li::before {
   content: "•";
   position: absolute;
-  left: 0;
-  color: #6366f1;            /* indigo accent - change to your brand colour */
-  font-size: 1.4rem;
+  left: 0.4rem;
+  color: #4f46e5;                    /* indigo/teal accent – change to your brand gold/green if preferred, e.g. #d4af37 */
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .outcome {
   font-style: italic;
-  margin-top: 1.8rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid #e2e8f0;
-  color: #334155;
+  margin: 2.5rem 0 0.5rem;
+  padding: 1.5rem 1.8rem;
+  background: rgba(79, 70, 229, 0.04); /* very subtle indigo tint */
+  border-radius: 10px;
+  border-left: 5px solid #4f46e5;     /* stronger accent line */
+  color: #1e293b;
   font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* ──────────────────────────────────────────────
+   RESPONSIVE ADJUSTMENTS
+─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .services {
+    margin: 3rem 0;
+  }
+
+  .domain-card {
+    margin: 2rem 0.5rem;             /* tighter on mobile */
+    border-radius: 12px;
+  }
+
+  .domain-header {
+    padding: 1.4rem 1.8rem;
+    flex-direction: column;          /* stack number + title on very small screens */
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .domain-number {
+    font-size: 2rem;
+  }
+
+  .domain-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .domain-content {
+    padding: 1.8rem;
+  }
+
+  .section-intro,
+  .section-closing {
+    margin: 1.5rem auto 3rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .domain-card {
+    max-width: 1000px;               /* breathe more on desktop */
+  }
+
+  .domain-content {
+    padding: 2.75rem 3rem;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .domain-card,
+  .domain-card:hover,
+  .domain-card:focus-within {
+    transition: none;
+    transform: none;
+  }
 }
