@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMYA | Home</title>
 <style>
-  /* Reset & Base */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#fff; background:#061934; }
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#fff; background:#061934; overflow-x:hidden; }
 
-  /* Navigation */
-  nav { display:flex; justify-content:center; gap:2rem; background:#0a294b; padding:1rem; }
-  nav a { color:#fff; text-decoration:none; font-weight:600; transition:color 0.3s; }
-  nav a:hover { color:#bfa14a; }
+/* Navigation */
+nav { display:flex; justify-content:center; gap:2rem; background:#0a294b; padding:1rem; position:relative; z-index:10;}
+nav a { color:#fff; text-decoration:none; font-weight:600; transition:color 0.3s; }
+nav a:hover { color:#bfa14a; }
 
-  /* Hero Banner */
-  .hero-banner { position:relative; width:100%; height:80vh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-  .banner-img { width:100%; height:100%; object-fit:cover; display:block; position:absolute; top:0; left:0; z-index:1; }
-  .hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; z-index:2; }
-  .hero-content { text-align:center; color:#fff; padding:2rem; z-index:3; }
-  .hero-content h1 {
+/* Hero Banner */
+.hero-banner { position:relative; width:100%; height:80vh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.banner-img { width:100%; height:100%; object-fit:cover; display:block; position:absolute; top:0; left:0; z-index:1; filter:brightness(0.6);}
+.hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; z-index:3; }
+.hero-content { text-align:center; color:#fff; padding:2rem; z-index:5; position:relative; }
+.hero-content h1 {
     font-size:5rem; 
     font-weight:800; 
     margin-bottom:0.5rem;
@@ -27,27 +27,48 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: floatTitle 3s ease-in-out infinite alternate;
-  }
-  .hero-content .tagline { font-size:1.5rem; font-weight:500; }
-  .divider { width:80px; height:4px; background:#bfa14a; margin:1rem auto; border-radius:2px; }
+}
+.hero-content .tagline { font-size:1.5rem; font-weight:500; }
+.divider { width:80px; height:4px; background:#bfa14a; margin:1rem auto; border-radius:2px; }
 
-  @keyframes floatTitle {
+@keyframes floatTitle {
     0% { transform: translateY(0px); }
     100% { transform: translateY(-8px); }
-  }
+}
 
-  /* Content Section */
-  .container { max-width:1200px; margin:3rem auto; padding:0 1rem; }
-  h1,h2,h3,h4 { text-align:center; margin-bottom:1rem; }
-  p { margin-bottom:1.2rem; }
-  .highlight { color:#bfa14a; font-weight:600; }
+/* Glass Floating Boxes Behind Hero */
+.floating-box { 
+    position:absolute; 
+    width:150px; 
+    height:150px; 
+    border-radius:20px; 
+    background: rgba(255,255,255,0.05); 
+    backdrop-filter: blur(12px); 
+    box-shadow:0 10px 40px rgba(0,0,0,0.7);
+    border:1px solid rgba(255,255,255,0.2);
+    animation: floatBox 8s ease-in-out infinite alternate;
+    transition: transform 0.4s ease;
+}
+.floating-box:hover { transform: translateY(-20px) rotate(5deg) scale(1.1); }
 
-  /* Grids & Glass Cards */
-  .grid-2, .grid-4 { display:grid; gap:2rem; margin:2rem 0; }
-  .grid-2 { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
-  .grid-4 { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+@keyframes floatBox {
+    0% { transform: translateY(0px) rotate(0deg);}
+    50% { transform: translateY(-10px) rotate(2deg);}
+    100% { transform: translateY(0px) rotate(0deg);}
+}
 
-  .service-card, .foundation-card {
+/* Content Section */
+.container { max-width:1200px; margin:3rem auto; padding:0 1rem; }
+h1,h2,h3,h4 { text-align:center; margin-bottom:1rem; }
+p { margin-bottom:1.2rem; }
+.highlight { color:#bfa14a; font-weight:600; }
+
+/* Grids & Cards */
+.grid-2, .grid-4 { display:grid; gap:2rem; margin:2rem 0; }
+.grid-2 { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+.grid-4 { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+
+.service-card, .foundation-card {
     background: rgba(255,255,255,0.05);
     border-radius:20px;
     padding:1.5rem;
@@ -55,37 +76,37 @@
     font-weight:500;
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
+    animation: floatCard 6s ease-in-out infinite alternate;
+    cursor:pointer;
+}
 
-  .service-card:hover, .foundation-card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-  }
+.service-card:hover, .foundation-card:hover {
+    transform: translateY(-25px) rotateX(5deg) rotateY(5deg) scale(1.08);
+    box-shadow:0 25px 60px rgba(0,0,0,0.8);
+}
 
-  /* Continuous Float Animation for Subtle Movement */
-  @keyframes float {
-    0%,100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-  }
-  .service-card, .foundation-card { animation: float 6s ease-in-out infinite; }
+@keyframes floatCard {
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(-8px);}
+    100% { transform: translateY(0px);}
+}
 
-  /* Closing Section */
-  .closing { margin-top:3rem; }
-  .closing-main { font-size:1.2rem; font-weight:500; margin-bottom:0.5rem; }
-  .closing-sub { font-size:1rem; color:#ccc; }
-  .small-divider { width:50px; height:3px; background:#bfa14a; margin:1rem auto; border-radius:2px; }
+/* Closing Section */
+.closing { margin-top:3rem; }
+.closing-main { font-size:1.2rem; font-weight:500; margin-bottom:0.5rem; }
+.closing-sub { font-size:1rem; color:#ccc; }
+.small-divider { width:50px; height:3px; background:#bfa14a; margin:1rem auto; border-radius:2px; }
 
-  /* Footer */
-  footer { text-align:center; padding:1.5rem; background:#0a294b; color:#fff; font-size:0.9rem; margin-top:3rem; }
+/* Footer */
+footer { text-align:center; padding:1.5rem; background:#0a294b; color:#fff; font-size:0.9rem; margin-top:3rem; }
 
-  /* Responsive */
-  @media (max-width:768px) {
+/* Responsive */
+@media (max-width:768px) {
     .hero-content h1 { font-size:3rem; }
     .hero-content .tagline { font-size:1.2rem; }
-  }
-
+}
 </style>
 </head>
 <body>
@@ -99,6 +120,13 @@
 
 <div class="hero-banner">
   <img src="assets/1.jpg" alt="AMYA Banner" class="banner-img">
+  
+  <!-- Floating glass boxes -->
+  <div class="floating-box" style="top:10%; left:15%; width:120px; height:120px;"></div>
+  <div class="floating-box" style="top:30%; left:70%; width:160px; height:160px;"></div>
+  <div class="floating-box" style="top:60%; left:40%; width:140px; height:140px;"></div>
+  <div class="floating-box" style="top:15%; left:50%; width:100px; height:100px;"></div>
+
   <div class="hero-overlay">
     <div class="hero-content">
       <h1>AMYA</h1>
