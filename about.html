@@ -1,39 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMYA | About</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+.services {
+  margin: 4rem 0;
+  text-align: center;
+}
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Contact</a>
-</nav>
+.section-intro {
+  max-width: 700px;
+  margin: 1.5rem auto 3rem;
+  font-size: 1.2rem;
+  color: #555;
+}
 
-<section class="container">
-  <h1>AMYA</h1>
-  <div class="divider"></div>
+.domain-card {
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 900px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  <p>AMYA is a contemporary Islamic consultancy delivering strategic advisory across operations, governance, and brand clarity.</p>
+.domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
 
-  <p>Rooted in the principle of <span class="highlight">Amanah</span>, AMYA supports leaders and organisations in building structured, ethical, and sustainable systems.</p>
+.domain-header {
+  background: #0f172a;          /* dark slate for contrast */
+  color: white;
+  padding: 1.4rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
 
-  <div class="card">
-    <h2>Our Ethos</h2>
-    <p>We believe excellence (<span class="highlight">Ihsan</span>) is foundational. Every structure we design and every event we curate is intentional, purposeful, and aligned with long-term impact.</p>
-  </div>
+.domain-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  opacity: 0.9;
+}
 
-  <div class="card">
-    <h2>Beyond Advisory</h2>
-    <p>Alongside strategic consultancy, AMYA curates high-quality events that cultivate leadership, meaningful dialogue, and authentic community connection.</p>
-  </div>
-</section>
+.domain-header h3 {
+  margin: 0;
+  font-size: 1.6rem;
+}
 
-<footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
-</body>
-</html>
+.domain-content {
+  padding: 2rem;
+}
+
+.domain-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.4rem 0;
+}
+
+.domain-content li {
+  margin-bottom: 0.9rem;
+  padding-left: 1.8rem;
+  position: relative;
+}
+
+.domain-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6366f1;            /* indigo accent - change to your brand colour */
+  font-size: 1.4rem;
+}
+
+.outcome {
+  font-style: italic;
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e2e8f0;
+  color: #334155;
+  font-weight: 500;
+}
