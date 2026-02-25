@@ -139,6 +139,19 @@
       gap: 1.2rem;
     }
 
+    .domain-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      opacity: 0.9;
+      transition: all 0.3s;
+    }
+
+    .domain-card:hover .domain-icon {
+      opacity: 1;
+      filter: brightness(1.15) hue-rotate(10deg); /* subtle gold tint on hover */
+    }
+
     .domain-number {
       font-size: 2.2rem;
       font-weight: bold;
@@ -208,6 +221,7 @@
       .hero { padding: 90px 15px 70px; }
       .hero h1 { font-size: 2.6rem; }
       nav { gap: 1.5rem; flex-wrap: wrap; }
+      .domain-icon { width: 36px; height: 36px; }
     }
   </style>
 </head>
@@ -231,6 +245,11 @@
 
     <div class="domain-card">
       <div class="domain-header">
+        <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="12 6 15 12 12 18 9 12 12 6"></polygon>
+          <line x1="12" y1="6" x2="12" y2="18"></line>
+        </svg> <!-- Fallback simple arrow-in-gear feel; replace if needed -->
         <span class="domain-number">01</span>
         <h3>Business Strategy & Operations</h3>
       </div>
@@ -251,6 +270,10 @@
 
     <div class="domain-card">
       <div class="domain-header">
+        <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 6l3 3 3-3M3 12l3 3 3-3M3 18l3 3 3-3M12 6l3 3 3-3M12 12l3 3 3-3M12 18l3 3 3-3"></path>
+          <line x1="6" y1="3" x2="18" y2="21"></line>
+        </svg> <!-- Balanced scales approximation -->
         <span class="domain-number">02</span>
         <h3>Governance & Compliance</h3>
       </div>
@@ -271,6 +294,10 @@
 
     <div class="domain-card">
       <div class="domain-header">
+        <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg> <!-- Palette + brush feel -->
         <span class="domain-number">03</span>
         <h3>Design & Brand Clarity</h3>
       </div>
@@ -291,6 +318,12 @@
 
     <div class="domain-card">
       <div class="domain-header">
+        <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="12" y1="18" x2="12" y2="12"></line>
+          <line x1="9" y1="15" x2="15" y2="15"></line>
+        </svg> <!-- Document / contract icon -->
         <span class="domain-number">04</span>
         <h3>Policy & Structural Development</h3>
       </div>
