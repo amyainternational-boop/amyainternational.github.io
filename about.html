@@ -4,109 +4,315 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMYA | About</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --navy: #0B2C48;
+      --deep-navy: #001F3F;
+      --gold: #D4AF37;
+      --light-gold: #E8C97F;
+      --cream: #FDFCF7;
+      --gray: #4A5568;
+      --light-gray: #EDF2F7;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* Hero / Cover Section */
+    .hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(212,175,55,0.08) 0%, transparent 50%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--navy);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--light-gold);
+    }
+
+    /* Services Section */
+    .services {
+      max-width: 1100px;
+      margin: -80px auto 80px;
+      padding: 0 5%;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+      text-align: center;
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      color: #555;
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .domain-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .domain-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      border-color: var(--gold);
+    }
+
+    .domain-header {
+      background: linear-gradient(to right, var(--navy), #0f3a6a);
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .domain-number {
+      font-size: 2.2rem;
+      font-weight: bold;
+      opacity: 0.85;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .domain-header h3 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .domain-content {
+      padding: 2rem;
+    }
+
+    .domain-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    .domain-content ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .domain-content li {
+      padding-left: 1.8rem;
+      position: relative;
+      margin-bottom: 0.9rem;
+    }
+
+    .domain-content li::before {
+      content: "•";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+    }
+
+    .outcome {
+      background: rgba(212,175,55,0.07);
+      padding: 1.2rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--gold);
+      margin-top: 1.8rem;
+      font-style: italic;
+    }
+
+    .section-closing {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 4rem 0 2rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    footer {
+      background: var(--navy);
+      color: var(--gold);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 90px 15px 70px; }
+      .hero h1 { font-size: 2.6rem; }
+      nav { gap: 1.5rem; flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<section class="services">
-  <h2>What AMYA Does</h2>
-  <p class="section-intro">Rooted in the timeless principles of <span class="highlight">amanah</span> (trustworthy stewardship), <span class="highlight">ihsan</span> (striving for excellence in every detail), and <span class="highlight">adl</span> (justice and balance), AMYA provides integrated strategic advisory that helps Muslim-led organisations, community initiatives, ethical businesses, and institutions build systems that are not only efficient and compliant but also spiritually aligned, resilient, and capable of generating lasting barakah.</p>
+  <header class="hero">
+    <h1>Integrated Strategic Advisory Rooted in Amanah, Ihsan & Adl</h1>
+    <p>Building resilient, spiritually aligned systems for Muslim-led organisations, ethical businesses, and community initiatives — so they flourish with purpose, integrity, and lasting barakah.</p>
+  </header>
 
-  <div class="domain-card">
-    <div class="domain-header">
-      <span class="domain-number">01</span>
-      <h3>Business Strategy & Operations</h3>
-    </div>
-    <div class="domain-content">
-      <p>We guide founders, leaders, and growing entities from fragmented, reactive operations toward deliberate, scalable, and value-aligned systems — ensuring every process reflects excellence (ihsan) and protects the trust (amanah) placed in the organisation.</p>
-      <p>Whether it's a halal startup scaling rapidly, a community organisation expanding services, or an ethical enterprise professionalising, we create the operational backbone that allows sustainable growth without compromising principles.</p>
-      <ul>
-        <li>Comprehensive operational diagnostics and bottleneck identification</li>
-        <li>End-to-end process redesign, lean workflows, and automation roadmaps</li>
-        <li>Organisational structure optimisation — defining roles, responsibilities, decision rights, and reporting lines with clarity and equity</li>
-        <li>Strategic planning facilitation — vision workshops, 3–5–10 year roadmaps, OKR/KPI frameworks rooted in mission and measurable impact</li>
-        <li>Capacity building: team development, succession planning, and performance systems that reward both results and character</li>
-        <li>Resource stewardship audits — ensuring time, money, and talent are used with accountability and minimal waste</li>
-        <li>Change management support for implementing ethical, principle-driven transformations</li>
-      </ul>
-      <p class="outcome"><strong>Outcome:</strong> Organisations that operate with calm precision, scalability, and spiritual integrity — running smoothly so leaders can focus on vision and service rather than daily crises. Systems built to last and attract barakah through disciplined excellence.</p>
-    </div>
-  </div>
+  <section class="services">
+    <h2>What AMYA Does</h2>
+    <p class="section-intro">Rooted in the timeless principles of <span class="highlight">amanah</span> (trustworthy stewardship), <span class="highlight">ihsan</span> (striving for excellence in every detail), and <span class="highlight">adl</span> (justice and balance), AMYA provides integrated strategic advisory that helps organisations build systems that are efficient, compliant, spiritually aligned, and capable of generating lasting <em>barakah</em>.</p>
 
-  <div class="domain-card">
-    <div class="domain-header">
-      <span class="domain-number">02</span>
-      <h3>Governance & Compliance</h3>
+    <div class="domain-card">
+      <div class="domain-header">
+        <span class="domain-number">01</span>
+        <h3>Business Strategy & Operations</h3>
+      </div>
+      <div class="domain-content">
+        <p>We guide founders and leaders from fragmented operations toward deliberate, scalable, value-aligned systems — ensuring every process reflects <em>ihsan</em> and protects <em>amanah</em>.</p>
+        <ul>
+          <li>Comprehensive operational diagnostics and bottleneck identification</li>
+          <li>End-to-end process redesign, lean workflows, automation roadmaps</li>
+          <li>Organisational structure optimisation — roles, responsibilities, decision rights</li>
+          <li>Strategic planning facilitation — vision workshops, 3–5–10 year roadmaps</li>
+          <li>Capacity building: team development, succession, performance systems</li>
+          <li>Resource stewardship audits — accountable use of time, money, talent</li>
+          <li>Change management for ethical, principle-driven transformations</li>
+        </ul>
+        <p class="outcome"><strong>Outcome:</strong> Organisations that operate with calm precision, scalability, and spiritual integrity — systems built to last and attract barakah through disciplined excellence.</p>
+      </div>
     </div>
-    <div class="domain-content">
-      <p>Strong governance is the shield of amanah. We help organisations establish internal accountability, ethical oversight, and compliance frameworks that protect mission, stakeholders, and reputation — while meeting both secular regulatory standards and higher Shariah-aligned expectations where relevant.</p>
-      <p>From mosques and charities to halal businesses and social enterprises, we ensure structures foster justice (adl), transparency, and long-term sustainability, reducing risk and building unbreakable trust.</p>
-      <ul>
-        <li>Full governance maturity assessments and redesign (board roles, charters, committees, term limits)</li>
-        <li>Board advisory, recruitment support, and training on fiduciary duties rooted in Islamic ethics</li>
-        <li>Development of policy ecosystems — codes of conduct, conflict-of-interest, whistleblower protections, anti-corruption</li>
-        <li>Risk registers, mitigation strategies, internal controls, and compliance monitoring systems</li>
-        <li>Ethical decision-making frameworks integrating Islamic principles with best-practice governance</li>
-        <li>Shariah compliance alignment support (where applicable) — screening, advisory coordination, documentation</li>
-        <li>Ongoing governance health checks and annual reviews to maintain integrity over time</li>
-      </ul>
-      <p class="outcome"><strong>Outcome:</strong> Institutions that are credible, defensible, and trusted by communities, funders, partners, and regulators alike. Governance that safeguards the mission for generations, embodying amanah in action and inviting divine blessing through justice and responsibility.</p>
-    </div>
-  </div>
 
-  <div class="domain-card">
-    <div class="domain-header">
-      <span class="domain-number">03</span>
-      <h3>Design & Brand Clarity</h3>
+    <div class="domain-card">
+      <div class="domain-header">
+        <span class="domain-number">02</span>
+        <h3>Governance & Compliance</h3>
+      </div>
+      <div class="domain-content">
+        <p>Strong governance is the shield of amanah. We establish accountability, ethical oversight, and compliance frameworks that protect mission, stakeholders, and reputation.</p>
+        <ul>
+          <li>Full governance maturity assessments and redesign</li>
+          <li>Board advisory, recruitment, training rooted in Islamic ethics</li>
+          <li>Policy ecosystems — codes of conduct, whistleblower protections</li>
+          <li>Risk registers, internal controls, compliance monitoring</li>
+          <li>Ethical decision-making frameworks integrating Islamic principles</li>
+          <li>Shariah compliance alignment support where applicable</li>
+          <li>Ongoing governance health checks and reviews</li>
+        </ul>
+        <p class="outcome"><strong>Outcome:</strong> Credible, defensible institutions trusted by communities and regulators — governance embodying amanah and inviting barakah through justice.</p>
+      </div>
     </div>
-    <div class="domain-content">
-      <p>Design is never superficial — it is strategic communication of values. We help organisations translate their core purpose, ethos, and Islamic-inspired principles into clear, cohesive, modest, and emotionally resonant visual and experiential identities that build connection and trust.</p>
-      <p>From halal brands and da'wah initiatives to community projects and ethical enterprises, we ensure every touchpoint feels intentional, dignified, and aligned with ihsan — excellence in presentation as an act of worship.</p>
-      <ul>
-        <li>Brand strategy & positioning — defining unique value proposition, audience insight, and narrative rooted in principles</li>
-        <li>Comprehensive visual identity systems — logos, typography, colour palettes, iconography, photography guidelines (modest and purposeful)</li>
-        <li>Tone-of-voice development that balances warmth, authority, and authenticity</li>
-        <li>Event experience architecture — program flow, spatial design, signage, and immersive storytelling that uplifts and connects</li>
-        <li>Multi-channel brand guidelines — ensuring consistency across digital, print, physical spaces, and community interactions</li>
-        <li>Values-to-visual translation workshops — aligning aesthetics with deeper Islamic ethics (simplicity, balance, beauty without extravagance)</li>
-        <li>Rebranding support for legacy organisations seeking modern yet principled refresh</li>
-      </ul>
-      <p class="outcome"><strong>Outcome:</strong> A powerful, unified presence that feels authentic and intentional — attracting the right audience, fostering loyalty, and reflecting the beauty of ihsan in every detail. Brands that inspire confidence and quietly convey barakah through purposeful design.</p>
-    </div>
-  </div>
 
-  <div class="domain-card">
-    <div class="domain-header">
-      <span class="domain-number">04</span>
-      <h3>Policy & Structural Development</h3>
+    <div class="domain-card">
+      <div class="domain-header">
+        <span class="domain-number">03</span>
+        <h3>Design & Brand Clarity</h3>
+      </div>
+      <div class="domain-content">
+        <p>Design is strategic communication of values. We translate purpose and principles into clear, modest, resonant identities that build connection and trust.</p>
+        <ul>
+          <li>Brand strategy & positioning rooted in principles</li>
+          <li>Visual identity systems — logos, typography, modest photography guidelines</li>
+          <li>Tone-of-voice balancing warmth, authority, authenticity</li>
+          <li>Event experience architecture and immersive storytelling</li>
+          <li>Multi-channel brand guidelines for consistency</li>
+          <li>Values-to-visual translation workshops</li>
+          <li>Rebranding for legacy organisations</li>
+        </ul>
+        <p class="outcome"><strong>Outcome:</strong> Authentic, intentional presence that inspires confidence and reflects the beauty of ihsan — brands conveying barakah through purposeful design.</p>
+      </div>
     </div>
-    <div class="domain-content">
-      <p>We transform promising ideas and initiatives into enduring institutions by creating the formal, documented foundations they need to professionalise, attract resources, scale impact, and outlive their founders — all while embedding amanah, justice, and excellence at every layer.</p>
-      <p>Ideal for new charities, education projects, community hubs, halal ventures, or legacy organisations needing renewal, we draft the structural scaffolding that turns vision into reality.</p>
-      <ul>
-        <li>Founding documents — constitutions, bylaws, mission/vision/values statements with Islamic grounding</li>
-        <li>Comprehensive internal policy suites — HR, finance, safeguarding, data protection, volunteer management</li>
-        <li>Governance manuals and handbooks — clear rules for decision-making, meetings, elections, and accountability</li>
-        <li>Organisational design blueprints — department structures, role descriptions, authority matrices</li>
-        <li>Strategic documentation — multi-year plans, impact measurement frameworks, sustainability models</li>
-        <li>Succession & continuity planning — ensuring smooth leadership transitions and institutional memory</li>
-        <li>Policy review cycles and custom templates tailored to size, sector, and cultural context</li>
-      </ul>
-      <p class="outcome"><strong>Outcome:</strong> Solid, clearly articulated foundations that enable initiatives to grow professionally, secure funding/partnerships, comply confidently, and deliver consistent impact. Structures built on amanah that protect the mission long-term and become vessels for ongoing barakah.</p>
+
+    <div class="domain-card">
+      <div class="domain-header">
+        <span class="domain-number">04</span>
+        <h3>Policy & Structural Development</h3>
+      </div>
+      <div class="domain-content">
+        <p>We create formal foundations that turn promising initiatives into enduring institutions — embedding amanah, justice, and excellence at every layer.</p>
+        <ul>
+          <li>Founding documents with Islamic grounding</li>
+          <li>Comprehensive internal policy suites</li>
+          <li>Governance manuals and handbooks</li>
+          <li>Organisational design blueprints</li>
+          <li>Strategic documentation and impact frameworks</li>
+          <li>Succession & continuity planning</li>
+          <li>Policy review cycles and custom templates</li>
+        </ul>
+        <p class="outcome"><strong>Outcome:</strong> Solid foundations enabling professional growth, funding confidence, and consistent impact — structures protecting the mission and becoming vessels for barakah.</p>
+      </div>
     </div>
-  </div>
 
-  <p class="section-closing">These four domains are deeply interconnected. A strong strategy needs solid governance; clear brand identity amplifies operational excellence; robust policies provide the guardrails for sustainable growth. AMYA delivers them holistically — so your organisation doesn't just function, it flourishes with purpose and integrity.</p>
-</section>
+    <p class="section-closing">These domains are deeply interconnected — AMYA delivers them holistically so your organisation doesn't just function, it flourishes with purpose and integrity.</p>
+  </section>
 
-<footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
+  <footer>© 2026 AMYA — Built on Amanah. Designed with Integrity.</footer>
 
 </body>
 </html>
